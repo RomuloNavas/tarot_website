@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 const props = defineProps<{ name: string }>()
 const router = useRouter()
 const user = useUserStore()
@@ -44,4 +44,4 @@ watchEffect(() => {
       </button>
     </div>
   </div>
-</template>
+</template> -->

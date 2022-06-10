@@ -13,6 +13,9 @@ export default defineConfig({
   shortcuts: [
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
+    ['header1', 'text-4xl font-extrabold'],
+    ['header2', 'text-3xl font-bold'],
+    ['header3', 'text-4xl font-bold font-arapey'],
   ],
   theme: {
     colors: {
@@ -36,7 +39,7 @@ export default defineConfig({
         sans: 'Roboto',
         mono: ['Fira Code', 'Fira Mono:400,700'],
         // custom ones
-        bebas: 'Bebas Neue',
+        arapey: 'Arapey',
         lato: [
           {
             name: 'Lato',

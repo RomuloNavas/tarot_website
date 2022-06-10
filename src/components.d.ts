@@ -5,6 +5,9 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Bottom: typeof import('./components/Bottom.vue')['default']
+    Candle: typeof import('./components/Candle.vue')['default']
+    Cards: typeof import('./components/Cards.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

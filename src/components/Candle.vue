@@ -18,7 +18,7 @@ const appState = useAppStateStore()
 
 <style scoped lang="scss">
 $flame-height: 150px;
-$wick-height: 50px;
+$wick-height: 40px;
 $orange: #ff6a00;
 $orange-yellow: #ff9224;
 $dark: #2c2b39;
@@ -31,7 +31,7 @@ $yellow-grey: #58523a;
   cursor: pointer;
   width: 34px;
   // .wick &:after => height and bottom should be the same as margin at bottom
-  margin: 90px auto 70px auto;
+  margin: 45px auto 50px auto;
   position: relative;
   height: 100%;
   align-self: flex-end;
@@ -70,8 +70,8 @@ $yellow-grey: #58523a;
     left: 50%;
     width: 0px;
     // bottom = height * -1
-    bottom:-70px;
-    height: 70px;
+    bottom:-50px;
+    height: 50px;
     box-shadow:
       0 5px 2px 3px gold,
       0 20px 2px 14px gold,

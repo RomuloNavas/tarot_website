@@ -13,9 +13,10 @@ export default defineConfig({
   shortcuts: [
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
-    ['header1', 'text-4xl font-extrabold'],
-    ['header2', 'text-3xl font-bold'],
+    ['header1', 'text-6xl font-extrabold font-arapey'],
+    ['header2', 'text-5xl font-bold font-arapey'],
     ['header3', 'text-4xl font-bold font-arapey'],
+    ['text-body', 'text-lg font-lato'],
   ],
   theme: {
     colors: {

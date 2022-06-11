@@ -1,21 +1,30 @@
 <script setup lang="ts">
-const text = ref('КОНТАКТЫ')
+const text = ref('Записаться на консультацию')
 const dividedText = text.value.split(' ', 32)
 const myArray = ref([''])
 const index = 0
 const appState = useAppStateStore()
-function smokeTheSpan(letter: String, event: MouseEvent) {
-  event.target.className = 'active smoked letters'
-  // eslint-disable-next-line no-console
-  console.log(event.target.className)
+function smokeTheSpan(letter: String, index: Number, event: MouseEvent) {
+  if (index !== 3 && index !== 11 && index !== 16 && index !== 22)
+    event.target.className = 'active smoked letters'
 }
 </script>
 
 <template>
   <div class="smoked">
-    <span v-for=" (letter, index) in text" :key="index" header3 class="smoked letters" :class="appState.isBigFire ? 'isBigFire' : ''" @mouseover="smokeTheSpan(letter, $event)">
+    <span v-for=" (letter, index) in text" :key="index" header3 class="smoked letters" :class="appState.isBigFire ? 'isBigFire' : ''" @mouseover="smokeTheSpan(letter, index, $event)">
       {{ letter !== ' ' ? letter : '&nbsp' }}
     </span>
+
+    <p text-body mt-2>
+      WhatsApp: <a :class="appState.isBigFire ? 'isBigFire' : ''" href="@">+7 918 546-09-57</a>
+    </p>
+    <p text-body>
+      Telegram: <a :class="appState.isBigFire ? 'isBigFire' : ''" href="@">t.me/inamoto_taro</a>
+    </p>
+    <p text-body>
+      Мобильный Номер: <a :class="appState.isBigFire ? 'isBigFire' : ''" href="@">+7 918 546-09-57</a>
+    </p>
   </div>
   <Candle />
 </template>
@@ -23,6 +32,14 @@ function smokeTheSpan(letter: String, event: MouseEvent) {
 <style lang="scss" scoped>
 .smoked {
   position: relative;
+}
+a{
+  color: #9dbbe9;
+}
+a.isBigFire{
+  background: -webkit-linear-gradient(#fbf348,#ff9224,#ffb224,rgb(244, 218, 151),white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .smoked span {
   position: relative;
@@ -33,7 +50,7 @@ span{
   color: #9dbbe9;
 }
 span.isBigFire {
-  background: -webkit-linear-gradient(gold,orange,orange,white,white);
+  background: -webkit-linear-gradient(#fbf348,#ff9224,#ffb224,rgb(244, 218, 151),white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -11,11 +11,12 @@ export default {
 
 <style lang="scss">
 $backgroundColor: #17141d;
+
 body {
-    padding: 0;
-    margin: 0;
-    color: white;
-    font-family: 'DM Mono', monospace;
-    background: $backgroundColor;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-family: 'DM Mono', monospace;
+  background: $backgroundColor;
 }
 </style>

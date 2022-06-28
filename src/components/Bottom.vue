@@ -11,46 +11,63 @@ function smokeTheSpan(letter: String, index: Number, event: MouseEvent) {
 </script>
 
 <template>
-  <div class="smoked">
+  <div class="bottom">
+    <!-- <div class="smoked">
     <span v-for=" (letter, index) in text" :key="index" header3 class="smoked letters" :class="appState.isBigFire ? 'isBigFire' : ''" @mouseover="smokeTheSpan(letter, index, $event)">
       {{ letter !== ' ' ? letter : '&nbsp' }}
     </span>
 
-    <p text-body mt-2>
+    <p font-body mt-2>
       WhatsApp: <a :class="appState.isBigFire ? 'isBigFire' : ''" href="@">+7 918 546-09-57</a>
     </p>
-    <p text-body>
+    <p font-body>
       Telegram: <a :class="appState.isBigFire ? 'isBigFire' : ''" href="@">t.me/inamoto_taro</a>
     </p>
-    <p text-body>
+    <p font-body>
       Мобильный Номер: <a :class="appState.isBigFire ? 'isBigFire' : ''" href="@">+7 918 546-09-57</a>
     </p>
+  </div> -->
+    <Candle />
   </div>
-  <Candle />
 </template>
 
 <style lang="scss" scoped>
+.bottom {
+  position: relative;
+}
+
+#candle_animation {
+  position: absolute;
+  right: 32px;
+  bottom: -50%;
+}
+
 .smoked {
   position: relative;
 }
-a{
+
+a {
   color: #9dbbe9;
 }
-a.isBigFire{
-  background: -webkit-linear-gradient(#fbf348,#ff9224,#ffb224,rgb(244, 218, 151),white);
+
+a.isBigFire {
+  background: -webkit-linear-gradient(#fbf348, #ff9224, #ffb224, rgb(244, 218, 151), white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .smoked span {
   position: relative;
   display: inline-block;
   cursor: default;
 }
-span{
+
+span {
   color: #9dbbe9;
 }
+
 span.isBigFire {
-  background: -webkit-linear-gradient(#fbf348,#ff9224,#ffb224,rgb(244, 218, 151),white);
+  background: -webkit-linear-gradient(#fbf348, #ff9224, #ffb224, rgb(244, 218, 151), white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -68,9 +85,11 @@ span.isBigFire {
     filter: blur(0px);
     transform: translateX(0) translateY(0) rotate(0deg) scale(1);
   }
+
   50% {
     opacity: 0.3;
   }
+
   100% {
     opacity: 0;
     filter: blur(50px);
@@ -91,10 +110,12 @@ span.isBigFire {
     filter: blur(0px);
     transform: translateX(0) translateY(0) rotate(0deg) scale(1);
   }
+
   50% {
     opacity: 0.3;
     pointer-events: none;
   }
+
   100% {
     opacity: 0;
     filter: blur(30px);

@@ -5,19 +5,18 @@ export default {
 </script>
 
 <template>
+  <Header />
   <Cards />
   <Bottom />
 </template>
 
 <style lang="scss">
-$backgroundColor: #17141d;
-
 body {
   padding: 0;
   margin: 0;
   color: white;
   font-family: 'DM Mono', monospace;
-  background: $backgroundColor;
+  background-color: var(--color-bg);
   display: flex;
   align-items: center;
   justify-content: center;

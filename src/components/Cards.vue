@@ -147,7 +147,7 @@ function setCurrentDeck(nameOfClickedDeck: string) {
     <button v-for="deck in decks" :key="deck.name" class="button"
       :class="[currentDeck.name === deck.name ? 'active' : '', appState.isBigFire ? 'isBigFire' : '']"
       @click="setCurrentDeck(deck.name)">
-      {{ deck.name }}
+      <p>{{ deck.name }}</p>
       <div class="button__horizontal" />
       <div class="button__vertical" />
     </button>
@@ -155,34 +155,33 @@ function setCurrentDeck(nameOfClickedDeck: string) {
   <section class="card-list">
     <article v-for=" (cards, index) in currentDeck.cards" :key="index" class="card"
       :class="[isClosed ? 'closed' : 'opened', appState.isBigFire ? 'isBigFire' : '']"
-      :style="{ backgroundImage: `url(${cards.imgSrc})` }" @click="shuffleCards(index)" />
+      :style="{ backgroundImage: `url(${cards.imgSrc})` }" bg-bg @click="shuffleCards(index)" />
   </section>
 </template>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
-$cardColor: #17141d;
+@import "../styles/global.scss";
 
 .deck_buttons-main_container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 128px;
 
   .button {
     margin: 8px 24px;
     --offset: 10px;
     --border-size: 2px;
-    --color: #9dbbe9;
     opacity: 0.8;
-
     display: block;
     position: relative;
-    padding: 1.5em 3em;
+    padding: 20px 32px;
     appearance: none;
     border: 0;
     background: transparent;
-    color: var(--color);
+    color: var(--color-button-primary);
     text-transform: uppercase;
     letter-spacing: .25em;
     outline: none;
@@ -192,24 +191,29 @@ $cardColor: #17141d;
     box-shadow: inset 0 0 0 var(--border-size) currentcolor;
     transition: background .1s ease;
 
+    p {
+      color: #ffffff;
+    }
+
     &.active {
       opacity: 1;
-      background: var(--color);
-      color: #17141d;
+      background: var(--color-button-primary);
+
+      p {
+        color: #17141d;
+      }
 
       .button__horizontal {
-        transform: scaleX(0);
+        transform: scaleX(1);
       }
 
       .button__vertical {
-        transform: scaleY(0);
+        transform: scaleY(1);
+
       }
 
     }
 
-    &.isBigFire {
-      --color: #d05e24;
-    }
   }
 }
 
@@ -247,10 +251,13 @@ $cardColor: #17141d;
       left: calc(var(--vertical-offset) * -1);
       right: calc(var(--vertical-offset) * -1);
     }
+
+    transform: scaleX(0);
+
   }
 
   &:hover &__horizontal {
-    transform: scaleX(0);
+    transform: scaleX(1);
   }
 
   &__vertical {
@@ -264,10 +271,12 @@ $cardColor: #17141d;
       left: calc(var(--horizontal-offset) - var(--border-size));
       right: calc(var(--horizontal-offset) - var(--border-size));
     }
+
+    transform: scaleY(0);
   }
 
   &:hover &__vertical {
-    transform: scaleY(0);
+    transform: scaleY(1);
   }
 
 }
@@ -302,12 +311,12 @@ a {
 }
 
 .card {
-  width: 300px;
+  width: 280px;
+  max-width: 280px;
   aspect-ratio: auto 2.55 / 4.73;
   padding: 1.5rem;
   border-radius: 16px;
-  background: $cardColor;
-  box-shadow: -1rem 0 3rem #000;
+  box-shadow: -0.1rem 0 3rem #000;
   display: flex;
   flex-direction: column;
   transition: .2s, background-image 0s;
@@ -343,12 +352,13 @@ a {
 }
 
 .card:hover {
-  transform: translateY(-1rem);
+  transform: translate(-1rem);
+  ;
 }
 
 .card.closed:not(:first-child) {
   transition: .3s, background-image 0s;
-  margin-left: -308px;
+  margin-left: -288px;
 }
 
 .card.closed:not(:last-child) {
@@ -391,11 +401,11 @@ a {
   transform: rotateY(0deg);
   // When card turns around, it shows an image and it gets darker.
   transition: transform 0.8s ease-in, margin-left 0.6s, background-image 0s 0.55s ease-in, filter 0.3s 0s ease-in;
-  margin-left: -130px;
+  margin-left: -110px;
   background-size: contain;
 
   &:hover {
-    transform: translateY(-2rem)rotateY(0deg);
+    transform: translateY(-2rem)rotateY(0deg) rotateZ(12deg) translateX(-3rem);
     transition: 0.3s, background-image 0s;
   }
 }
@@ -409,7 +419,7 @@ a {
   background-size: contain;
 
   &:hover {
-    transform: translateY(-2rem)rotateY(0deg);
+    transform: translateY(-2rem)rotateY(0deg) rotateZ(12deg) translateX(-3rem);
     transition: 0.3s, background-image 0s;
   }
 }

@@ -196,17 +196,6 @@ const formatPhoneNumber = (s: string, plus = true) => {
 </template>
 
 <style lang="scss">
-nav {
-    --main-color: #ffffff;
-    --svg-background-color: #739bd6;
-}
-
-nav.isBigFire {
-    --main-color: #ffffff;
-    --svg-background-color: #e08557;
-
-}
-
 @media (min-width:851px) {
 
     nav {
@@ -217,7 +206,7 @@ nav.isBigFire {
         height: 60px;
         width: 100%;
         max-height: 60px;
-        background-color: var(--main-color);
+        background-color: var(--color-top_bar);
         filter: brightness(0.85);
         display: flex;
         align-items: center;
@@ -225,12 +214,12 @@ nav.isBigFire {
         transition: all 0.3s ease;
 
         &:hover {
-            background-color: var(--main-color);
+            background-color: var(--color-top_bar);
             // border-right: solid 2px #73859F; // when bar is on left
         }
 
         .letter {
-            color: #fafafa;
+            color: #17141d;
         }
 
         .contacts-main_container {
@@ -249,7 +238,7 @@ nav.isBigFire {
             svg {
                 margin-left: auto;
                 margin-right: auto;
-                color: var(--svg-background-color); // Default background of icons
+                color: var(--color-social_media-icons_background); // Default background of icons
                 width: 44px;
 
                 path,
@@ -316,7 +305,12 @@ nav.isBigFire {
 }
 
 nav {
+
     &:hover {
+        .letter {
+            color: #ffffff;
+        }
+
         .icon-facebook #facebook-background {
             color: #1976D2;
         }
@@ -356,6 +350,7 @@ nav {
         .icon-whats #whats-dark_green {
             color: #2bb826;
         }
+
     }
 }
 </style>

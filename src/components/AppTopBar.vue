@@ -197,13 +197,14 @@ const formatPhoneNumber = (s: string, plus = true) => {
 
 <style lang="scss">
 nav {
-    --main-color: #9dbbe9;
-    --svg-background-color: #7086a8;
+    --main-color: #ffffff;
+    --svg-background-color: #739bd6;
 }
 
 nav.isBigFire {
-    --main-color: #d05e24;
-    --svg-background-color: #994806;
+    --main-color: #ffffff;
+    --svg-background-color: #e08557;
+
 }
 
 @media (min-width:851px) {

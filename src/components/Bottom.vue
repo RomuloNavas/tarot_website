@@ -34,12 +34,17 @@ function smokeTheSpan(letter: String, index: Number, event: MouseEvent) {
 <style lang="scss" scoped>
 .bottom {
   position: relative;
+  width: 90vw;
+  max-width: 1600px;
+  // background-color: #fbf348;
+  transform: translateY(-20px);
+  height: 0px;
 }
 
 #candle_animation {
   position: absolute;
-  right: 32px;
-  bottom: -50%;
+  right: 0px;
+  bottom: 0px;
 }
 
 .smoked {

@@ -4,72 +4,103 @@ const isClosed = ref(true)
 const riderWaite = reactive([
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/rider_waite/magician.jpg',
   },
   {
     name: 'The Sun',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg',
+    imgSrc: '/images/rider_waite/sun.jpg',
   },
   {
     name: 'The World',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg',
+    imgSrc: '/images/rider_waite/world.jpg',
   },
   {
     name: 'King of Swords',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Swords14.jpg',
+    imgSrc: '/images/rider_waite/swords.jpg',
   },
   {
     name: 'Knight of Pentacles',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Pents12.jpg',
+    imgSrc: '/images/rider_waite/pentacles.jpg',
   },
   {
     name: 'The Hanged Man',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/RWS_Tarot_12_Hanged_Man.jpg',
+    imgSrc: '/images/rider_waite/hanged_man.jpg',
   },
   {
     name: 'The Emperor',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg',
+    imgSrc: '/images/rider_waite/emperor.jpg',
   },
   {
     name: 'The Lovers',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/TheLovers.jpg',
+    imgSrc: '/images/rider_waite/lovers.jpg',
   },
 ])
 const prideTarot = reactive([
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/pride/magician.jpg',
   },
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/pride/justice.jpg',
   },
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/pride/seven_pentacles.jpg',
   },
-
+  {
+    name: 'The Magician',
+    imgSrc: '/images/pride/star.jpg',
+  },
+  {
+    name: 'The Magician',
+    imgSrc: '/images/pride/pentacles.jpg',
+  },
+  {
+    name: 'The Magician',
+    imgSrc: '/images/pride/six_of_cups.jpg',
+  },
+  {
+    name: 'The Magician',
+    imgSrc: '/images/pride/king_of_wands.jpg',
+  },
+  {
+    name: 'The Magician',
+    imgSrc: '/images/pride/eight_of_wands.jpg',
+  },
 ])
 const devianMoonTarot = reactive([
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/devian/kolezo_fortuny.jpg',
   },
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/devian/luna.jpg',
   },
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/devian/poveshenyi.jpg',
   },
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/devian/durak.jpg',
   },
   {
     name: 'The Magician',
-    imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    imgSrc: '/images/devian/imperator.jpg',
+  },
+  {
+    name: 'The Magician',
+    imgSrc: '/images/devian/tuz_kubkov.jpg',
+  },
+  {
+    name: 'The Magician',
+    imgSrc: '/images/devian/cemyorka_djezlov.jpg',
+  },
+  {
+    name: 'The Magician',
+    imgSrc: '/images/devian/dvoyka_monet.jpg',
   },
 
 ])
@@ -102,6 +133,10 @@ function setCurrentDeck(nameOfClickedDeck: string) {
     if (deck.name === nameOfClickedDeck)
       currentDeck.value = deck
   })
+  isClosed.value = true
+  setTimeout(() => {
+    isClosed.value = false
+  }, 300)
   // eslint-disable-next-line no-console
   console.log(currentDeck.value)
 }
@@ -268,7 +303,7 @@ a {
 
 .card {
   width: 300px;
-  aspect-ratio: auto 2.75 / 4.75;
+  aspect-ratio: auto 2.55 / 4.73;
   padding: 1.5rem;
   border-radius: 16px;
   background: $cardColor;

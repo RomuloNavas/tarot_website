@@ -272,7 +272,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
                 position: absolute;
                 top: 42px;
                 right: -150px - 16px;
-                // min-height: 220px;
+                min-width: 220px;
                 border-radius: 8px;
                 background-color: white;
                 color: #000;

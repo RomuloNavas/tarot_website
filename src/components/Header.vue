@@ -30,9 +30,13 @@ header {
     justify-content: center;
 }
 
+.header_text-main_container{
+ max-width: 600px;
+ padding: 16px 32px;
+}
 .image-main_container {
     img {
-        width: 400px;
+        width: 350px;
         border-radius: 22px;
         filter: brightness(0.8);
         transition: filter 0.3s ease, ;

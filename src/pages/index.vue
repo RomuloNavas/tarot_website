@@ -5,6 +5,7 @@ export default {
 </script>
 
 <template>
+  <SmokeLetters />
   <Cards />
   <Header />
   <Bottom />

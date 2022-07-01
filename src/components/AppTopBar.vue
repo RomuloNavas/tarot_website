@@ -272,7 +272,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
                 position: absolute;
                 top: 42px;
                 right: -150px - 16px;
-                min-width: 220px;
+                // min-height: 220px;
                 border-radius: 8px;
                 background-color: white;
                 color: #000;
@@ -306,51 +306,51 @@ const formatPhoneNumber = (s: string, plus = true) => {
 
 nav {
 
-    &:hover {
-        .letter {
-            color: #ffffff;
-        }
-
-        .icon-facebook #facebook-background {
-            color: #1976D2;
-        }
-
-        // SKYPE
-        .icon-skype #skype-background {
-            color: #03A9F4;
-        }
-
-        // Instagram
-        .icon-insta #insta-orange {
-            color: #fa8f21;
-        }
-
-        .icon-insta #insta-pink {
-            color: #d82d7e;
-        }
-
-        .icon-insta #insta-purple {
-            color: #8c3aaa;
-        }
-
-        // Telegram
-        .icon-telegram #telegram-blue_top {
-            color: #2AABEE;
-        }
-
-        .icon-telegram #telegram-blue_bottom {
-            color: #229ED9;
-        }
-
-        // Whatsapp
-        .icon-whats #whats-light_green {
-            color: #61fd7d;
-        }
-
-        .icon-whats #whats-dark_green {
-            color: #2bb826;
-        }
-
+    // &:hover {
+    .letter {
+        color: #ffffff;
     }
+
+    .icon-facebook #facebook-background {
+        color: #1976D2;
+    }
+
+    // SKYPE
+    .icon-skype #skype-background {
+        color: #03A9F4;
+    }
+
+    // Instagram
+    .icon-insta #insta-orange {
+        color: #fa8f21;
+    }
+
+    .icon-insta #insta-pink {
+        color: #d82d7e;
+    }
+
+    .icon-insta #insta-purple {
+        color: #8c3aaa;
+    }
+
+    // Telegram
+    .icon-telegram #telegram-blue_top {
+        color: #2AABEE;
+    }
+
+    .icon-telegram #telegram-blue_bottom {
+        color: #229ED9;
+    }
+
+    // Whatsapp
+    .icon-whats #whats-light_green {
+        color: #61fd7d;
+    }
+
+    .icon-whats #whats-dark_green {
+        color: #2bb826;
+    }
+
+    // }
 }
 </style>

@@ -5,8 +5,8 @@ export default {
 </script>
 
 <template>
-  <Header />
   <Cards />
+  <Header />
   <Bottom />
 </template>
 

@@ -143,20 +143,17 @@ function setCurrentDeck(nameOfClickedDeck: string) {
 </script>
 
 <template>
-  <div class="deck_buttons-main_container" font-button>
-    <button v-for="deck in decks" :key="deck.name" class="button"
-      :class="[currentDeck.name === deck.name ? 'active' : '', appState.isBigFire ? 'isBigFire' : '']"
-      @click="setCurrentDeck(deck.name)">
-      <p>{{ deck.name }}</p>
-      <div class="button__horizontal" />
-      <div class="button__vertical" />
-    </button>
-  </div>
   <section class="card-list">
     <article v-for=" (cards, index) in currentDeck.cards" :key="index" class="card"
       :class="[isClosed ? 'closed' : 'opened', appState.isBigFire ? 'isBigFire' : '']"
       :style="{ backgroundImage: `url(${cards.imgSrc})` }" bg-bg @click="shuffleCards(index)" />
   </section>
+  <div class="deck_buttons-main_container" font-button>
+    <AppButton v-for="deck in decks" :key="deck.name" class="button"
+      :class="currentDeck.name === deck.name ? 'active' : ''" @click="setCurrentDeck(deck.name)">
+      {{ deck.name }}
+    </AppButton>
+  </div>
 </template>
 
 <style lang="scss">
@@ -168,130 +165,17 @@ function setCurrentDeck(nameOfClickedDeck: string) {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 128px;
-
-  .button {
-    margin: 8px 24px;
-    --offset: 10px;
-    --border-size: 2px;
-    opacity: 0.8;
-    display: block;
-    position: relative;
-    padding: 20px 32px;
-    appearance: none;
-    border: 0;
-    background: transparent;
-    color: var(--color-button-primary);
-    text-transform: uppercase;
-    letter-spacing: .25em;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 0;
-    box-shadow: inset 0 0 0 var(--border-size) currentcolor;
-    transition: background .1s ease;
-
-    p {
-      color: #ffffff;
-    }
-
-    &.active {
-      opacity: 1;
-      background: var(--color-button-primary);
-
-      p {
-        color: #17141d;
-      }
-
-      .button__horizontal {
-        transform: scaleX(1);
-      }
-
-      .button__vertical {
-        transform: scaleY(1);
-
-      }
-
-    }
-
-  }
 }
 
-.button:hover {
-  opacity: 1;
-}
-
-.button {
-
-  &__horizontal,
-  &__vertical {
-    position: absolute;
-    top: var(--horizontal-offset, 0);
-    right: var(--vertical-offset, 0);
-    bottom: var(--horizontal-offset, 0);
-    left: var(--vertical-offset, 0);
-    transition: transform .8s ease;
-    will-change: transform;
-
-    &::before {
-      content: '';
-      position: absolute;
-      border: inherit;
-    }
-  }
-
-  &__horizontal {
-    --vertical-offset: calc(var(--offset) * -1);
-    border-top: var(--border-size) solid currentcolor;
-    border-bottom: var(--border-size) solid currentcolor;
-
-    &::before {
-      top: calc(var(--vertical-offset) - var(--border-size));
-      bottom: calc(var(--vertical-offset) - var(--border-size));
-      left: calc(var(--vertical-offset) * -1);
-      right: calc(var(--vertical-offset) * -1);
-    }
-
-    transform: scaleX(0);
-
-  }
-
-  &:hover &__horizontal {
-    transform: scaleX(1);
-  }
-
-  &__vertical {
-    --horizontal-offset: calc(var(--offset) * -1);
-    border-left: var(--border-size) solid currentcolor;
-    border-right: var(--border-size) solid currentcolor;
-
-    &::before {
-      top: calc(var(--horizontal-offset) * -1);
-      bottom: calc(var(--horizontal-offset) * -1);
-      left: calc(var(--horizontal-offset) - var(--border-size));
-      right: calc(var(--horizontal-offset) - var(--border-size));
-    }
-
-    transform: scaleY(0);
-  }
-
-  &:hover &__vertical {
-    transform: scaleY(1);
-  }
-
-}
-
-a {
-  text-decoration: none;
-}
-
-// CARDS
-// CARDS
 // CARDS
 
 .card-list {
   display: flex;
-  padding: 3rem;
+  padding-top: 32px;
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-bottom: 22px;
+
   overflow-x: scroll;
 }
 

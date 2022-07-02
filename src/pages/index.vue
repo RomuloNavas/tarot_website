@@ -5,10 +5,10 @@ export default {
 </script>
 
 <template>
-  <SmokeLetters />
+  <SmokeLetters msg="ИННА ТАРО" />
   <Cards />
+  <SectionSeparator />
   <Header />
-  <Bottom />
 </template>
 
 <style lang="scss">

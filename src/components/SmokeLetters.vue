@@ -1,42 +1,31 @@
 <script setup lang="ts">
-const text = ref('ИННА ТАРО')
-const dividedText = text.value.split(' ', 32)
+const props = defineProps<{ msg: string }>()
+const dividedText = props.msg.split(' ', 32)
 const myArray = ref([''])
 const index = 0
 const appState = useAppStateStore()
 function smokeTheSpan(letter: String, index: Number, event: MouseEvent) {
   // if (index !== 3 && index !== 11 && index !== 16 && index !== 22)
-  event.target.className = 'active smoked letters'
+  if (event.target)
+    event.target.className = 'active smoked letters'
 }
 
-// ========= In case that you want to return the normal state of letters:
 const smoke_letters_container = ref<HTMLElement | null>(null)
 setInterval(() => {
   const parent1 = document.querySelector('.smoke_letters_container')
+  if (parent1) {
+    const active_children = parent1.querySelectorAll('.active')
 
-  if (parent1.children.length == parent1.querySelectorAll('.active').length) {
-    const letters = smoke_letters_container.value?.children
-    if (letters) {
-      setTimeout(() => {
-        for (let i = 0; i < letters.length; i++) {
-          const letter = letters[i]
-          letter.classList.remove('active')
-          parent1.classList.add('appear')
-        }
-      }, 3000)
-    }
+    active_children.forEach((children) => {
+      children.classList.remove('active')
+    })
   }
 }, 2000)
-
-// // eslint-disable-next-line no-console
-// console.log(smoke_letters_container.value)
-// // eslint-disable-next-line no-console
-// console.log(letters)
 </script>
 
 <template>
-  <div ref="smoke_letters_container" class="smoked smoke_letters_container">
-    <span v-for=" (letter, index) in text" :key="index" header3 class="smoked letters"
+  <div ref="smoke_letters_container" class="smoked smoke_letters_container appear">
+    <span v-for=" (letter, index) in props.msg" :key="letter" header3 class="smoked letters"
       :class="appState.isBigFire ? 'isBigFire' : ''" @mouseover="smokeTheSpan(letter, index, $event)">
       {{ letter !== ' ' ? letter : '&nbsp' }}
     </span>
@@ -70,7 +59,7 @@ setInterval(() => {
 
 /* Words animation */
 .smoked.appear span {
-  animation: smokeLetters 1s linear alternate-reverse;
+  animation: smokeLetters 2s linear alternate-reverse;
 }
 
 .smoked span.active {
@@ -95,12 +84,6 @@ setInterval(() => {
     transform: translateX(300px) translateY(-300px) rotate(45deg) scale(3);
   }
 }
-
-/* Letters animation */
-// .smoked.letters.active {
-//   color: #374151;
-//   animation: smokeLetters 2s linear forwards;
-// }
 
 @keyframes smokeLetters {
   0% {

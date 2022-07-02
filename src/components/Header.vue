@@ -3,14 +3,14 @@ const appState = useAppStateStore()
 </script>
 
 <template>
-    <header>
+    <h3 header4 class="section-title">
+        Обо мне
+    </h3>
+    <section id="about_me">
         <div class="image-main_container" :class="[appState.isBigFire ? 'isBigFire' : '']">
-            <img src="/images/inna.jpg" alt="">
+            <img src="/images/inna.jpg" alt="ИННА ТАРО">
         </div>
-        <div class="header_text-main_container" font-body>
-            <h4 header4>
-                ОБО МНЕ
-            </h4>
+        <div class="text-main_container" font-body>
             Я - практикующий Таролог. <br>
             Для меня Таро - это не гадание "на будущее", а инструмент для анализа ситуации и создания
             событий.
@@ -33,39 +33,69 @@ const appState = useAppStateStore()
                 <li>Помогаю тебе найти свой путь к успеху - твоё предназначение.</li>
             </ul>
         </div>
-    </header>
+    </section>
 </template>
 
 <style lang="scss" scoped>
-header {
-    margin: 64px 0px;
-    width: 100%;
+#about_me {
     display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 32px;
 }
 
-.header_text-main_container {
-    max-width: 600px;
-    padding: 16px 32px;
+.section-title {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+    color: #eeeeee;
+    font-size: 90px;
+    position: relative;
+    margin-top: 16px;
+    margin-bottom: 48px;
+}
+
+.text-main_container {
+    max-width: 800px;
     text-align: left;
 
     h4 {
         margin-top: 16px;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 32px;
+            height: 50%;
+            border-bottom: solid 2px #eeeeee;
+            position: absolute;
+            transform: translateY(2px);
+
+        }
     }
 
     ul {
-        list-style: disc;
         margin-left: 1rem;
+        list-style-type: '— ';
+
+        li {
+            margin: 8px 0;
+        }
     }
 }
 
 .image-main_container {
     img {
-        width: 350px;
+        aspect-ratio: auto 1/1;
+        object-fit: contain;
         border-radius: 22px;
         filter: brightness(0.8);
         transition: filter 0.3s ease, ;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
     }
 
 }

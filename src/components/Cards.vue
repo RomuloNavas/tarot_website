@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const appState = useAppStateStore()
-const isClosed = ref(true)
+const isClosed = ref(false)
 const riderWaite = reactive([
   {
     name: 'The Magician',
@@ -144,7 +144,7 @@ function setCurrentDeck(nameOfClickedDeck: string) {
 
 <template>
   <section class="card-list">
-    <article v-for=" (cards, index) in currentDeck.cards" :key="index" class="card"
+    <div v-for=" (cards, index) in currentDeck.cards" :key="index" class=" card"
       :class="[isClosed ? 'closed' : 'opened', appState.isBigFire ? 'isBigFire' : '']"
       :style="{ backgroundImage: `url(${cards.imgSrc})` }" bg-bg @click="shuffleCards(index)" />
   </section>

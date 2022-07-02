@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./components/Header.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SectionSeparator: typeof import('./components/SectionSeparator.vue')['default']
     SmokeLetters: typeof import('./components/SmokeLetters.vue')['default']
   }
 }

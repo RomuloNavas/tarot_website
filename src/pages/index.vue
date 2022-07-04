@@ -8,7 +8,7 @@ export default {
   <SmokeLetters msg="ИННА ТАРО" />
   <Cards />
   <SectionSeparator />
-  <Header />
+  <AboutMe />
 </template>
 
 <style lang="scss">

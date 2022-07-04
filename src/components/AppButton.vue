@@ -4,7 +4,9 @@ const appState = useAppStateStore()
 
 <template>
     <button class="button" :class="[appState.isBigFire ? 'isBigFire' : '']">
-        <p><slot /></p>
+        <p>
+            <slot />
+        </p>
         <div class="button__horizontal" />
         <div class="button__vertical" />
     </button>
@@ -31,6 +33,7 @@ const appState = useAppStateStore()
     border-radius: 0;
     box-shadow: inset 0 0 0 var(--border-size) currentcolor;
     transition: background .1s ease;
+    min-width: 60px;
 
     p {
         color: #ffffff;
@@ -39,8 +42,9 @@ const appState = useAppStateStore()
     &.active {
         opacity: 1;
         background: var(--color-button-primary);
-        p{
-            color: #17141d ;
+
+        p {
+            color: #17141d;
         }
 
         .button__horizontal {

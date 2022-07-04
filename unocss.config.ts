@@ -11,15 +11,13 @@ import {
 
 export default defineConfig({
   shortcuts: [
-    ['btn', 'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
-    ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
-    ['header1', 'text-6xl font-extrabold bebas text-textMain font-serif'],
-    ['header2', 'text-3xl xl:text-5xl font-bold font-arapey'],
-    ['header3', 'text-2xl xl:text-4xl font-bold font-arapey'],
-    ['header4', 'text-xl xl:text-2xl font-bold font-arapey leading-[3.2rem] text-white'],
-    ['font-body', 'text-md sm:text-lg font-normal font-sans leading-[2.6rem] sm:leading-[1.7rem] text-gray-300 '],
+    ['header1', 'text-6xl font-extrabold text-textMain'],
+    ['header2', 'text-3xl xl:text-5xl font-bold'],
+    ['header3', 'text-2xl xl:text-4xl font-bold'],
+    ['header4', 'text-xl xl:text-2xl font-bold leading-[2.2rem] '],
+    ['font-body', 'text-lg sm:text-lg font-normal font-sans leading-[1.6rem] sm:leading-[1.7rem] text-textSecondary'],
     ['font-label', 'text-xs font-normal uppercase font-lato tracking-[.18rem] leading-[1.6rem]'],
-    ['font-button', 'text-lg font-bold font-arapey tracking-wider'],
+    ['font-button', 'text-lg font-bold tracking-wider'],
   ],
   theme: {
     colors: {
@@ -28,6 +26,8 @@ export default defineConfig({
       candleOn: '#fb900a',
       focus: '#9dbbe9',
       hint: '#158443',
+      textPrimary: 'white',
+      textSecondary: '#e4e7eb',
     },
   },
   presets: [

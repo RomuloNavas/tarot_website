@@ -23,12 +23,12 @@ const riderWaite = reactive([
     imgSrc: '/images/rider_waite/pentacles.jpg',
   },
   {
-    name: 'The Hanged Man',
-    imgSrc: '/images/rider_waite/hanged_man.jpg',
-  },
-  {
     name: 'The Emperor',
     imgSrc: '/images/rider_waite/emperor.jpg',
+  },
+  {
+    name: 'The Hanged Man',
+    imgSrc: '/images/rider_waite/hanged_man.jpg',
   },
   {
     name: 'The Lovers',
@@ -115,7 +115,7 @@ const decks = reactive([
     cards: prideTarot,
   },
   {
-    name: 'Devian Moon',
+    name: 'Deviant Moon',
     cards: devianMoonTarot,
   },
 ])
@@ -137,34 +137,75 @@ function setCurrentDeck(nameOfClickedDeck: string) {
   setTimeout(() => {
     isClosed.value = false
   }, 300)
-  // eslint-disable-next-line no-console
-  console.log(currentDeck.value)
 }
 </script>
 
 <template>
-  <section class="card-list">
-    <div v-for=" (cards, index) in currentDeck.cards" :key="index" class=" card"
-      :class="[isClosed ? 'closed' : 'opened', appState.isBigFire ? 'isBigFire' : '']"
-      :style="{ backgroundImage: `url(${cards.imgSrc})` }" bg-bg @click="shuffleCards(index)" />
-  </section>
-  <div class="deck_buttons-main_container" font-button>
-    <AppButton v-for="deck in decks" :key="deck.name" class="button"
-      :class="currentDeck.name === deck.name ? 'active' : ''" @click="setCurrentDeck(deck.name)">
-      {{ deck.name }}
-    </AppButton>
-  </div>
+  <header>
+    <div class="card-list">
+      <div v-for=" (cards, index) in currentDeck.cards" :key="index" class=" card"
+        :class="[isClosed ? 'closed' : 'opened', appState.isBigFire ? 'isBigFire' : '']"
+        :style="{ backgroundImage: `url(${cards.imgSrc})` }" bg-bg @click="shuffleCards(index)" />
+    </div>
+    <div class="deck_buttons-main_container" font-button>
+      <AppButton v-for="deck in decks" :key="deck.name" class="button"
+        :class="currentDeck.name === deck.name ? 'active' : ''" @click="setCurrentDeck(deck.name)">
+        {{ deck.name }}
+      </AppButton>
+    </div>
+  </header>
 </template>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
 @import "../styles/global.scss";
 
+header {
+  position: relative;
+}
+
 .deck_buttons-main_container {
+  margin-top: 8px;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width:820px) {
+  .card-list {
+    display: flex;
+    padding: 8px 2px !important;
+    max-width: 98vw;
+    overflow-x: scroll;
+  }
+
+  .button {
+    margin: 8px 20px !important;
+    width: 100% !important;
+    padding: 12px 24px !important;
+  }
+
+  .card {
+    width: 180px !important;
+    height: 295px !important;
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(7) {
+      display: none;
+    }
+
+    &:first-child {
+      // User will not be able to close the deck (by pressing the first card)
+      pointer-events: none !important;
+    }
+  }
+
+  .card.opened:not(:first-child) {
+    margin-left: -100px !important;
+  }
 }
 
 // CARDS
@@ -175,7 +216,7 @@ function setCurrentDeck(nameOfClickedDeck: string) {
   padding-left: 64px;
   padding-right: 64px;
   padding-bottom: 22px;
-
+  max-width: 98vw;
   overflow-x: scroll;
 }
 
@@ -196,8 +237,7 @@ function setCurrentDeck(nameOfClickedDeck: string) {
 
 .card {
   width: 280px;
-  max-width: 280px;
-  aspect-ratio: auto 2.55 / 4.73;
+  height: 482px;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: -0.1rem 0 3rem #000;
@@ -257,7 +297,7 @@ function setCurrentDeck(nameOfClickedDeck: string) {
 
 .card.opened:first-child {
   transform: none;
-  background-image: url(../../public/backsideOfCard.png) !important;
+  background-image: url(/backsideOfCard.png) !important;
   transition: transform 0.6s, background-image 0s;
   transform: none;
 
@@ -269,7 +309,7 @@ function setCurrentDeck(nameOfClickedDeck: string) {
 
 .card.closed {
   transform: none;
-  background-image: url(../../public/backsideOfCard.png) !important; // I made the opacity 0.25 by my own in adobe illustrator
+  background-image: url(/backsideOfCard.png) !important; // I made the opacity 0.25 by my own in adobe illustrator
   transition: transform .6s, background-image 0s;
   transform: none;
   transform: translateX(1rem) rotateY(-180deg);

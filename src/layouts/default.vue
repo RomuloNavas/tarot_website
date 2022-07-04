@@ -1,6 +1,6 @@
 <template>
   <AppTopBar />
-  <main class="px-4 py-10 text-center md:mt-10 mt-0">
+  <main class="text-center mt-11">
     <RouterView />
   </main>
 </template>

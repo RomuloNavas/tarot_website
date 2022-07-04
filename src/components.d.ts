@@ -5,12 +5,12 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AboutMe: typeof import('./components/AboutMe.vue')['default']
     AppButton: typeof import('./components/AppButton.vue')['default']
     AppTopBar: typeof import('./components/AppTopBar.vue')['default']
     Bottom: typeof import('./components/Bottom.vue')['default']
     Candle: typeof import('./components/Candle.vue')['default']
     Cards: typeof import('./components/Cards.vue')['default']
-    Header: typeof import('./components/Header.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SectionSeparator: typeof import('./components/SectionSeparator.vue')['default']

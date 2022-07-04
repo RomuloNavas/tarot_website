@@ -35,10 +35,10 @@ setInterval(() => {
 <style lang="scss" scoped>
 .smoke_letters_container {
   position: relative;
-
 }
 
 .smoked span {
+  font-family: 'Arapey', serif;
   position: relative;
   display: inline-block;
   cursor: default;
@@ -60,6 +60,17 @@ setInterval(() => {
 /* Words animation */
 .smoked.appear span {
   animation: smokeLetters 2s linear alternate-reverse;
+}
+
+@media (max-width:820px) {
+
+  .smoked span.active {
+    animation: none !important;
+  }
+
+  .smoked.appear span {
+    animation: none !important;
+  }
 }
 
 .smoked span.active {
@@ -101,6 +112,31 @@ setInterval(() => {
     opacity: 0;
     filter: blur(30px);
     transform: translateX(300px) translateY(-300px) rotate(360deg) scale(5);
+  }
+}
+
+@media (max-width:850px) {
+  .smoked {
+    pointer-events: none;
+    text-align: center;
+    margin-left: auto;
+
+  }
+
+  .smoked span {
+    user-select: none;
+    position: relative;
+    display: inline-block;
+    cursor: default;
+    color: #ffffff;
+    font-size: 40px;
+    height: 50px;
+    height: fit-content;
+    padding-top: 32px;
+    padding-bottom: 16px;
+    padding-left: 4px;
+    padding-right: 4px;
+
   }
 }
 </style>

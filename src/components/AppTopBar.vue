@@ -74,8 +74,10 @@ const formatPhoneNumber = (s: string, plus = true) => {
                         </g>
                     </svg>
                 </a>
-                <div class="help_message" font-body>
-                    <p>{{ formatPhoneNumber(socialMedia.whatsapp.number) }}</p>
+                <div class="help_message" font-body text-black bg-white>
+                    <p>
+                        {{ formatPhoneNumber(socialMedia.whatsapp.number) }}
+                    </p>
                     <!-- <img src="/images/whatsapp_qrcode.jpg" alt=""> -->
 
                     <div class="triangle triangle-whatsapp" />
@@ -91,7 +93,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
             class="letter"
             fill="currentColor" fill-rule="evenodd" d="M13.5 8H11V6c0-.552.448-.5 1-.5h1V3h-2a3 3 0 0 0-3 3v2H6v2.5h2V16h3v-5.5h1.5l1-2.5z" clip-rule="evenodd"
           /></svg>
-        <div class="help_message" font-body>
+        <div class="help_message" font-body text-black bg-white>
           <img src="/images/telegram_qrcode.jpg" alt="">
           <div class="triangle triangle-whatsapp" />
         </div>
@@ -113,7 +115,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
                         </defs>
                     </svg>
                 </a>
-                <div class="help_message" font-body>
+                <div class="help_message" font-body text-black bg-white>
                     <p>{{ formatPhoneNumber(socialMedia.telegram.number) }}</p>
                     <p text-sm>
                         @{{ socialMedia.telegram.user.toUpperCase() }}
@@ -159,7 +161,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
 
                     </svg>
                 </a>
-                <div class="help_message" font-body>
+                <div class="help_message" font-body text-black bg-white>
                     <p text-sm>
                         @{{ socialMedia.instagram.user.toUpperCase() }}
                     </p>
@@ -182,7 +184,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
                             d="M11.999 11.679c-.353.493-.874.883-1.551 1.159-.669.274-1.47.415-2.384.415-1.096 0-2.015-.19-2.733-.566a3.547 3.547 0 0 1-1.256-1.1c-.325-.46-.488-.917-.488-1.36 0-.274.107-.514.318-.709.209-.195.477-.292.797-.292.262 0 .488.077.672.23.175.148.326.366.447.645.135.306.282.564.437.765.151.197.366.361.641.49.277.128.65.195 1.108.195.631 0 1.149-.134 1.537-.395.381-.255.565-.563.565-.939 0-.296-.097-.53-.294-.713a2.104 2.104 0 0 0-.814-.444 16.188 16.188 0 0 0-1.4-.342c-.793-.167-1.466-.364-2-.59-.547-.23-.989-.548-1.311-.945-.328-.406-.494-.913-.494-1.509 0-.568.174-1.08.518-1.522.341-.439.839-.782 1.482-1.015.633-.231 1.386-.347 2.239-.347.681 0 1.28.078 1.781.232.503.154.927.362 1.26.619.336.26.586.535.742.823.158.29.239.579.239.858 0 .269-.105.514-.313.726-.21.214-.474.322-.784.322-.282 0-.504-.069-.657-.202-.143-.125-.292-.32-.456-.598a2.507 2.507 0 0 0-.685-.836c-.257-.193-.685-.289-1.275-.289-.546 0-.992.108-1.322.322-.318.205-.473.441-.473.721 0 .171.05.314.153.437.108.132.261.245.455.341.2.099.407.179.614.235.212.058.567.145 1.056.256.618.13 1.185.277 1.687.436.509.159.947.356 1.307.587.365.235.654.535.86.895.206.363.31.808.31 1.326a2.833 2.833 0 0 1-.535 1.678z" />
                     </svg>
                 </a>
-                <div class="help_message" font-body>
+                <div class="help_message" font-body text-black bg-white>
                     <p>{{ formatPhoneNumber(socialMedia.skype.number) }}</p>
                     <p text-sm>
                         {{ socialMedia.skype.mail }}
@@ -196,111 +198,72 @@ const formatPhoneNumber = (s: string, plus = true) => {
 </template>
 
 <style lang="scss">
-@media (min-width:851px) {
+nav {
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    max-height: 60px;
+    background-color: var(--color-top_bar);
+    filter: brightness(0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 
-    nav {
-        z-index: 2;
-        position: fixed;
-        left: 0;
-        top: 0;
-        height: 60px;
-        width: 100%;
-        max-height: 60px;
+    &:hover {
         background-color: var(--color-top_bar);
-        filter: brightness(0.85);
+        // border-right: solid 2px #73859F; // when bar is on left
+    }
+
+    .letter {
+        color: #17141d;
+    }
+
+    .contacts-main_container {
+        width: 100%;
+        height: 60px;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
 
-        &:hover {
-            background-color: var(--color-top_bar);
-            // border-right: solid 2px #73859F; // when bar is on left
+        .social_media-main_container {
+            position: relative;
+            margin: 4px 8px;
         }
 
-        .letter {
-            color: #17141d;
+        svg {
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--color-social_media-icons_background); // Default background of icons
+            width: 44px;
+
+            path,
+            stop {
+                transition: color 0.3s ease;
+            }
+
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
-        .contacts-main_container {
-            width: 100%;
-            height: 60px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+        *:hover {
 
-            .social_media-main_container {
-                position: relative;
-                margin: 4px 8px;
-            }
-
-            svg {
-                margin-left: auto;
-                margin-right: auto;
-                color: var(--color-social_media-icons_background); // Default background of icons
-                width: 44px;
-
-                path,
-                stop {
-                    transition: color 0.3s ease;
-                }
-
-                transition: transform 0.3s ease;
-
-                &:hover {
-                    transform: scale(1.1);
-                }
-            }
-
-            *:hover {
-
-                //For each child
-                .help_message {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: scale(1);
-                    scale: (2.7, 0.7);
-                }
-            }
-
+            //For each child
             .help_message {
-                transition: opacity 0.3s ease;
-                opacity: 0;
-                transform: scale(0);
-                visibility: hidden;
-                position: absolute;
-                top: 42px;
-                right: -150px - 16px;
-                min-width: 220px;
-                border-radius: 8px;
-                background-color: white;
-                color: #000;
-                margin-top: 8px;
-                padding: 8px;
-                text-align: center;
-                width: 100%;
-
-                img {
-                    width: 100%;
-                    height: fit-content;
-                }
-            }
-
-            .triangle {
+                opacity: 1;
                 visibility: visible;
-                width: 0;
-                height: 0;
-                position: absolute;
-                top: 0;
-                left: 0;
-                border-left: 12px solid transparent;
-                border-right: 12px solid transparent;
-                border-bottom: 12px solid white;
-                transition: opacity 0.6s ease;
-                transform: translate(22px, -11px) rotate(0deg);
+                transform: scale(1);
+                scale: (2.7, 0.7);
             }
         }
+
     }
 }
 
@@ -352,5 +315,49 @@ nav {
     }
 
     // }
+}
+
+@media (max-width:850px) {
+    .help_message {
+        display: none;
+    }
+}
+
+@media (min-width:851px) {
+    .help_message {
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        transform: scale(0);
+        visibility: hidden;
+        position: absolute;
+        top: 42px;
+        right: -150px - 16px;
+        min-width: 220px;
+        border-radius: 8px;
+        color: #000;
+        margin-top: 8px;
+        padding: 8px;
+        text-align: center;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: fit-content;
+        }
+    }
+
+    .triangle {
+        visibility: visible;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid white;
+        transition: opacity 0.6s ease;
+        transform: translate(22px, -11px) rotate(0deg);
+    }
 }
 </style>

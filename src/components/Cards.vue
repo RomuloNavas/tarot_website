@@ -172,7 +172,18 @@ header {
   justify-content: center;
 }
 
-@media (max-width:820px) {
+@media (max-width:800px) {
+  .card {
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(7) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width:600px) {
   .card-list {
     display: flex;
     padding: 8px 2px !important;
@@ -187,8 +198,8 @@ header {
   }
 
   .card {
-    width: 180px !important;
-    height: 295px !important;
+    width: 170px !important;
+    height: 285px !important;
 
     &:nth-child(2),
     &:nth-child(3),
@@ -236,8 +247,11 @@ header {
 }
 
 .card {
+  // width: 280px;
+  // height: 482px;
+  // aspect-ratio: 2.;
   width: 280px;
-  height: 482px;
+  aspect-ratio: auto 2.55 / 4.73;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: -0.1rem 0 3rem #000;

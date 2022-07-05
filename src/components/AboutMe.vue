@@ -52,9 +52,9 @@ const appState = useAppStateStore()
     // flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 32px;
     width: 100%;
     max-width: 1600px;
+    gap: 12px;
     position: relative;
     padding: 16px;
     padding-bottom: 32px;
@@ -95,7 +95,6 @@ const appState = useAppStateStore()
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        margin-bottom: 22px;
 
         img {
             aspect-ratio: auto 1/1;
@@ -113,7 +112,7 @@ const appState = useAppStateStore()
             font-size: 32px;
             line-height: 32px;
             margin-top: 22px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         a {

@@ -46,7 +46,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
             <!-- -WHATSAPP -->
 
             <div id="whats" class="social_media-main_container">
-                <a :href="`https://wa.me/${socialMedia.whatsapp.number}`">
+                <a target="_blank" :href="`https://wa.me/${socialMedia.whatsapp.number}`">
                     <svg class="icon-whats" xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                         viewBox="0 0 102 102">
                         <defs>
@@ -127,7 +127,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
             <div id="insta" class="social_media-main_container">
                 <!-- - INSTAGRAM -->
 
-                <a :href="`https://instagram.com/${socialMedia.instagram.user}?igshid=YmMyMTA2M2Y=`">
+                <a target="_blank" :href="`https://instagram.com/${socialMedia.instagram.user}?igshid=YmMyMTA2M2Y=`">
 
                     <svg class="icon-insta" xmlns="http://www.w3.org/2000/svg" width="44" height="44"
                         viewBox="0 0 102 102">
@@ -172,7 +172,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
             </div>
             <div id="skype" class="social_media-main_container">
                 <!-- -SKYPE -->
-                <a :href="`skype:${socialMedia.skype.number}?chat`">
+                <a target="_blank" :href="`skype:${socialMedia.skype.number}?chat`">
 
                     <svg class="icon-skype" width="44" height="44" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 16 16">

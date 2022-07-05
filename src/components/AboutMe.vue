@@ -12,7 +12,7 @@ const appState = useAppStateStore()
             <h4>
                 Записаться на консультацию
             </h4>
-            <a href="tel:+7918-546-0957">
+            <a target="_blank" href="https://wa.me/79185460957">
                 <AppButton class="active">
                     +7 (918) 546-09-57
                 </AppButton>
@@ -40,7 +40,6 @@ const appState = useAppStateStore()
                 <li>
                     Вместе с тобой создаю нужные тебе события, которые исполняют твои желания и помогают достичь целей.
                 </li>
-                <li>Помогаю тебе найти свой путь к успеху - твоё предназначение.</li>
             </ul>
         </div>
     </section>
@@ -122,7 +121,7 @@ const appState = useAppStateStore()
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            margin-bottom: 22px;
+            margin-bottom: 12px;
 
             button {
                 padding: 8px;

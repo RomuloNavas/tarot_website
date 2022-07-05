@@ -5,7 +5,7 @@
 useHead({
   title: 'Инна Таро',
   meta: [
-    { name: 'description', content: 'Инна Таро' },
+    { name: 'description', content: 'Меня зовут Инна. Я - практикующий Таролог. Для меня Таро - это не гадание "на будущее", а инструмент для анализа ситуации и создания событий.' },
     {
       name: 'theme-color',
       content: computed(() => isDark.value ? '#17141d' : '#17141d'),

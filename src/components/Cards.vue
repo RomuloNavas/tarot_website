@@ -109,14 +109,17 @@ const decks = reactive([
   {
     name: 'Rider Waite',
     cards: riderWaite,
+    description: 'Основная колода для любых запросов и создания событий.',
   },
   {
     name: 'Pride Tarot',
     cards: prideTarot,
+    description: 'Яркая, современная колода, которая помогает увидеть добро в любой, даже самой сложной ситуации.',
   },
   {
     name: 'Deviant Moon',
     cards: devianMoonTarot,
+    description: 'Психологическая колода для работы со скрытыми сторонами души.',
   },
 ])
 const currentDeck = ref(decks[0])
@@ -147,6 +150,10 @@ function setCurrentDeck(nameOfClickedDeck: string) {
         :class="[isClosed ? 'closed' : 'opened', appState.isBigFire ? 'isBigFire' : '']"
         :style="{ backgroundImage: `url(${cards.imgSrc})` }" bg-bg @click="shuffleCards(index)" />
     </div>
+    <p font-body text-gray-300 my-8 italic>
+      {{ currentDeck.description }}
+    </p>
+
     <div class="deck_buttons-main_container" font-button>
       <AppButton v-for="deck in decks" :key="deck.name" class="button"
         :class="currentDeck.name === deck.name ? 'active' : ''" @click="setCurrentDeck(deck.name)">

@@ -7,8 +7,16 @@ const appState = useAppStateStore()
         Обо мне
     </h3>
     <section id="about_me">
-        <div class="image-main_container" :class="[appState.isBigFire ? 'isBigFire' : '']">
+        <div class="image-main_container">
             <img width="400px" src="/images/inna.jpg" alt="ИННА ТАРО">
+            <h4>
+                Записаться на консультацию
+            </h4>
+            <a href="tel:+7918-546-0957">
+                <AppButton class="active">
+                    +7 (918) 546-09-57
+                </AppButton>
+            </a>
         </div>
         <div class="text-main_container" font-body>
             <p text-textSecondary>
@@ -84,6 +92,12 @@ const appState = useAppStateStore()
     }
 
     .image-main_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 22px;
+
         img {
             aspect-ratio: auto 1/1;
             object-fit: contain;
@@ -93,6 +107,28 @@ const appState = useAppStateStore()
             width: 100%;
             max-width: 400px;
             height: auto;
+
+        }
+
+        h4 {
+            font-size: 32px;
+            line-height: 32px;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 22px;
+
+            button {
+                padding: 8px;
+                width: 100%;
+                font-size: 1.4rem;
+            }
         }
     }
 }

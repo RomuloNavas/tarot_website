@@ -5,10 +5,24 @@ button:
   home: Home
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
-intro:
-  desc: Opinionated Vite Starter Template
-  dynamic-route: Demo of dynamic route
-  hi: Hi, {name}!
-  aka: Also known as
-  whats-your-name: What's your name?
-not-found: Not found
+
+main_title-inna_taro: INNA TAROT
+decks: 
+  rider_waite: Rider Waite
+  rider_waite-description: The main Tarot deck for asking any questions and creating.
+  pride_tarot: Pride Tarot
+  pride_tarot-description: A bright modern Tarot deck which helps you to see good points even in a difficult situation.
+  deviant: Deviant Moon
+  deviant-description: A psychological Tarot deck for handling with shadow sides of your soul.
+
+about_me:
+  about_me: About me
+  hello: Hello, everyone! My name is Inna. I'm a practicing tarologist.I use Tarot as an instrument for analyzing situations and creating happenings. 
+  my_methods: Methods of my practice
+  my_methods-description1: Revealing what negative guidelines block you from meeting your soulmate for making relationship, or earning more money.
+  my_methods-description2: Helping you to improve your relationship between you and your partner in love, friendship, work and in parent-child relations.
+  my_methods-description3: Working without stereotypes to solve questions not only for "male-female" couples.
+  my_methods-description4: Helping you how to improve a situation in a monetary sphere.
+  my_methods-description5: Creating together with you necessary happenings which bring your wishes come true and help to achieve your goals
+appointment: Appointment
+

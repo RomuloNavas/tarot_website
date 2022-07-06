@@ -19,8 +19,9 @@
     background-color: #d1d5db;
     height: 2px;
     width: 100%;
-    margin-top: 86px;
-    margin-bottom: 86px;
+    min-width: 100%;
+    margin-top: 48px;
+    margin-bottom: 48px;
 }
 
 .circle {
@@ -36,6 +37,13 @@
 
     }
 
+}
+
+@media (max-width:820px) {
+
+    .separator {
+        display: none;
+    }
 }
 
 .fade-in-down {

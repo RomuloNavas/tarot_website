@@ -1,52 +1,56 @@
 <script setup lang="ts">
 const appState = useAppStateStore()
+const { t } = useI18n()
 </script>
 
 <template>
-    <h3 header1>
-        Обо мне
-    </h3>
     <section id="about_me">
-        <div class="image-main_container">
-            <img width="400px" src="/images/inna.jpg" alt="ИННА ТАРО">
-            <h4>
-                Записаться на консультацию
-            </h4>
-            <a target="_blank" href="https://wa.me/79185460957">
-                <AppButton class="active">
-                    +7 (918) 546-09-57
-                </AppButton>
-            </a>
-        </div>
-        <div class="text-main_container" font-body>
-            <p text-textSecondary>
-                Всем привет! Меня зовут Инна. Я - практикующий Таролог. <br>
-                Для меня Таро - это не гадание "на будущее", а инструмент для анализа ситуации и создания
-                событий.
-            </p>
+        <h3 class="section-title" header1>
+            Обо мне
+        </h3>
+        <div class="main_container">
+            <div class="image-main_container">
+                <img width="400px" src="/images/inna.jpg" alt="ИННА ТАРО">
+                <h4>
+                    Записаться на консультацию
+                </h4>
+                <a target="_blank" href="https://wa.me/79185460957">
+                    <AppButton class="active">
+                        +7 (918) 546-09-57
+                    </AppButton>
+                </a>
+            </div>
+            <div class="text-main_container" font-body>
+                <p text-textSecondary>
+                    {{ t("about_me.hello") }}
+                </p>
 
-            <h4 header4>
-                МОИ МЕТОДЫ РАБОТЫ
-            </h4>
-            <ul text-textSecondary>
-                <li>
-                    Выявляю, какие негативные установки мешают тебе встретить "своего" человека для отношений или
-                    зарабатывать
-                    больше денег.
-                </li>
-                <li>Помогаю наладить и улучшить отношения (любовные, дружеские, деловые и детско-родительские).</li>
-                <li>Работаю без стереотипов - с запросами на отношения не только пар "мужчина и женщина".</li>
-                <li>Помогаю тебе понять, как можно улучшить ситуацию в денежной сфере.</li>
-                <li>
-                    Вместе с тобой создаю нужные тебе события, которые исполняют твои желания и помогают достичь целей.
-                </li>
-            </ul>
+                <h4 header4>
+                    {{ t("about_me.my_methods") }}
+                </h4>
+                <ul text-textSecondary>
+                    <li>
+                        {{ t("about_me.my_methods-description1") }}
+                    </li>
+                    <li>{{ t("about_me.my_methods-description1") }}</li>
+                    <li>{{ t("about_me.my_methods-description3") }}</li>
+                    <li>{{ t("about_me.my_methods-description4") }}</li>
+                    <li>{{ t("about_me.my_methods-description5") }}</li>
+                </ul>
+            </div>
         </div>
     </section>
 </template>
 
 <style lang="scss" scoped>
-#about_me {
+@media (max-width:820px) {
+    h3 {
+        position: relative;
+        display: none;
+    }
+}
+
+.main_container {
     display: flex;
     flex-wrap: wrap;
     // flex-direction: column;

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const appState = useAppStateStore()
 const isClosed = ref(false)
+const { t } = useI18n()
 const riderWaite = reactive([
   {
     name: 'The Magician',
@@ -109,17 +110,17 @@ const decks = reactive([
   {
     name: 'Rider Waite',
     cards: riderWaite,
-    description: 'Основная колода для любых запросов и создания событий.',
+    description: t('decks.rider_waite-description'),
   },
   {
     name: 'Pride Tarot',
     cards: prideTarot,
-    description: 'Яркая, современная колода, которая помогает увидеть добро в любой, даже самой сложной ситуации.',
+    description: t('decks.pride_tarot-description'),
   },
   {
     name: 'Deviant Moon',
     cards: devianMoonTarot,
-    description: 'Психологическая колода для работы со скрытыми сторонами души.',
+    description: t('decks.deviant-description'),
   },
 ])
 const currentDeck = ref(decks[0])

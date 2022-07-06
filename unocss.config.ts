@@ -16,7 +16,7 @@ export default defineConfig({
     ['header3', 'text-2xl xl:text-4xl font-bold'],
     ['header4', 'text-2xl font-bold leading-[2.2rem] '],
     ['font-body', 'text-xl font-normal font-sans leading-[1.6rem] sm:leading-[1.7rem] text-textSecondary'],
-    ['font-label', 'text-xs font-normal uppercase font-lato tracking-[.18rem] leading-[1.6rem]'],
+    ['font-label', 'text-xs font-normal uppercase font-lato tracking-[.18rem] leading-[0.8rem]'],
     ['font-button', 'text-lg font-bold tracking-wider'],
   ],
   theme: {

@@ -22,7 +22,7 @@ button:
   about: About
   back: Back
   go: GO
-  home: Back to the home page
+  home: Back to home page
   toggle_dark: Toggle dark mode
   toggle_langs: Change languages
 decks:

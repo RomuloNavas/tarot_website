@@ -4,15 +4,16 @@
 
 <template>
   <AppTopBar />
-  <main flex flex-col center items-center justify-center class="text-center " h-full mt-10>
+  <main flex flex-col center items-center justify-center class="text-center " h-full>
     <RouterView />
-    <RomuloLogo class="dev_logo" />
   </main>
 </template>
 
 <style lang="scss">
 main {
   position: relative;
+  max-height: 1200px;
+  max-width: 1600px;
 }
 
 .dev_logo {

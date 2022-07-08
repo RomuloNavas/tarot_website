@@ -30,6 +30,7 @@ const { t } = useI18n()
                 </h4>
                 <ul text-textSecondary>
                     <li>{{ t("about_me.my_methods-description1") }}</li>
+                    <li>{{ t("about_me.my_methods-description2") }}</li>
                     <li>{{ t("about_me.my_methods-description3") }}</li>
                     <li>{{ t("about_me.my_methods-description4") }}</li>
                     <li>{{ t("about_me.my_methods-description5") }}</li>

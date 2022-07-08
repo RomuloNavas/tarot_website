@@ -57,12 +57,13 @@ function setCurrentDeck(nameOfClickedDeck: string) {
       <p text-lg>
         {{ t('not-found') }}
       </p>
-      <br>
-      <AppButton @click="router.push('/')">
-        {{ t('button.home') }}
-      </AppButton>
     </div>
+    <br>
+    <AppButton @click="router.push('/')">
+      {{ t('button.home') }}
+    </AppButton>
   </section>
+  <RomuloLogo class="dev_logo" />
 </template>
 
 <route lang="yaml">

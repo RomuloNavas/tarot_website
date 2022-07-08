@@ -6,13 +6,13 @@ const { t } = useI18n()
 <template>
     <section id="about_me">
         <h3 class="section-title" header1>
-            Обо мне
+            {{ t("about_me.about_me") }}
         </h3>
         <div class="main_container">
             <div class="image-main_container">
                 <img width="400px" src="/images/inna.jpg" alt="ИННА ТАРО">
                 <h4>
-                    Записаться на консультацию
+                    {{ t("appointment") }}
                 </h4>
                 <a target="_blank" href="https://wa.me/79185460957">
                     <AppButton class="active">

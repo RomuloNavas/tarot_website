@@ -110,17 +110,17 @@ const decks = reactive([
   {
     name: 'Rider Waite',
     cards: riderWaite,
-    description: t('decks.rider_waite-description'),
+    description: 'decks.rider_waite-description',
   },
   {
     name: 'Pride Tarot',
     cards: prideTarot,
-    description: t('decks.pride_tarot-description'),
+    description: 'decks.pride_tarot-description',
   },
   {
     name: 'Deviant Moon',
     cards: devianMoonTarot,
-    description: t('decks.deviant-description'),
+    description: 'decks.deviant-description',
   },
 ])
 const currentDeck = ref(decks[0])
@@ -152,7 +152,7 @@ function setCurrentDeck(nameOfClickedDeck: string) {
         :style="{ backgroundImage: `url(${cards.imgSrc})` }" bg-bg @click="shuffleCards(index)" />
     </div>
     <p font-body text-gray-300 my-8 italic>
-      {{ currentDeck.description }}
+      {{ t(`${currentDeck.description}`) }}
     </p>
 
     <div class="deck_buttons-main_container" font-button>

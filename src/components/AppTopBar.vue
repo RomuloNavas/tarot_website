@@ -204,12 +204,42 @@ const formatPhoneNumber = (s: string, plus = true) => {
 </template>
 
 <style lang="scss">
+@media (max-width:850px) {
+    .help_message {
+        display: none;
+    }
+
+    .languages {
+        position: absolute;
+        top: 0;
+        right: 12px;
+
+        .language-icon,
+        .language-icon-ghost {
+            width: 50px;
+        }
+    }
+
+    .contacts-main_container {
+        width: fit-content !important;
+
+        position: absolute;
+        top: 0;
+        left: 12px;
+
+        .social_media-main_container {
+            position: relative;
+            margin: 4px 6px !important;
+        }
+    }
+}
+
 .nav_main_container {
     width: 100%;
     height: 100%;
     position: relative;
+    max-width: 1800px;
 
-max-width: 1800px;
     .languages {
         position: absolute;
         top: 0;
@@ -334,12 +364,6 @@ nav {
     }
 
     // }
-}
-
-@media (max-width:850px) {
-    .help_message {
-        display: none;
-    }
 }
 
 @media (min-width:851px) {

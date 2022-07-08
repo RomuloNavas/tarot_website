@@ -1,18 +1,23 @@
 <script setup lang="ts">
-const router = useRouter()
-const { t } = useI18n()
+
 </script>
 
 <template>
-  <main p="x4 y10" text="center teal-700 dark:gray-200">
-    <div text-4xl>
-      <div i-carbon-warning inline-block />
-    </div>
+  <AppTopBar />
+  <main flex flex-col center items-center justify-center class="text-center " h-full mt-10>
     <RouterView />
-    <div>
-      <button btn text-sm m="3 t8" @click="router.back()">
-        {{ t('button.back') }}
-      </button>
-    </div>
+    <RomuloLogo class="dev_logo" />
   </main>
 </template>
+
+<style lang="scss">
+main {
+  position: relative;
+}
+
+.dev_logo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+</style>

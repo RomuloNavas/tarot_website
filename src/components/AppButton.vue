@@ -13,8 +13,6 @@ const appState = useAppStateStore()
 </template>
 
 <style lang="scss" scoped>
-
-
 .button {
     margin: 8px 24px;
     --offset: 10px;

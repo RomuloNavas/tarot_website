@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     Candle: typeof import('./components/Candle.vue')['default']
     Cards: typeof import('./components/Cards.vue')['default']
     Languages: typeof import('./components/Languages.vue')['default']
+    RomuloLogo: typeof import('./components/RomuloLogo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SectionSeparator: typeof import('./components/SectionSeparator.vue')['default']

@@ -145,13 +145,13 @@ function setCurrentDeck(nameOfClickedDeck: string) {
 </script>
 
 <template>
-  <header>
+  <header mt-6 mb-20 xl:my-0>
     <div class="card-list">
       <div v-for=" (cards, index) in currentDeck.cards" :key="index" class=" card"
         :class="[isClosed ? 'closed' : 'opened', appState.isBigFire ? 'isBigFire' : '']"
         :style="{ backgroundImage: `url(${cards.imgSrc})` }" bg-bg @click="shuffleCards(index)" />
     </div>
-    <p font-body text-gray-300 my-8 italic>
+    <p font-body text-gray-300 my-4 italic>
       {{ t(`${currentDeck.description}`) }}
     </p>
 

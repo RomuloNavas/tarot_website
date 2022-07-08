@@ -45,7 +45,7 @@ setInterval(() => {
   color: #eeeeee;
   font-size: 90px;
   height: 90px;
-  padding: 32px 10px;
+  padding: 32px 4px;
 
 }
 
@@ -70,6 +70,12 @@ setInterval(() => {
 
   .smoked.appear span {
     animation: none !important;
+  }
+
+  .smoked span {
+    padding: 22px 0px !important;
+    line-height: 0px !important;
+
   }
 }
 

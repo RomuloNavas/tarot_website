@@ -15,6 +15,7 @@ const instagram = {
     qrcode: '',
 }
 const skype = {
+    link: 'https://join.skype.com/invite/b45zACo81V7g',
     number: '79185460957',
     mail: 'inamoto_kirikidzo@mail.ru',
     qrcode: '',
@@ -176,7 +177,7 @@ const formatPhoneNumber = (s: string, plus = true) => {
                 </div>
                 <div id="skype" class="social_media-main_container">
                     <!-- -SKYPE -->
-                    <a target="_blank" :href="`skype:${socialMedia.skype.number}?chat`">
+                    <a target="_blank" :href="`${socialMedia.skype.link}`">
 
                         <svg class="icon-skype" width="44" height="44" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16">
